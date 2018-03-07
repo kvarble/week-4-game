@@ -5,8 +5,80 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>CrystalsCollector</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
 </head>
 <body>
+
+        <div class="jumbotron jumbotron-fluid">
+                <div class="container">
+                  <h1 class="display-3">Crystals Collector</h1>
+                  <p class="lead">Click on the crystals to add up points to exactly equal the number in the box!</p>
+                </div>
+              </div>
+    <div class="panel panel-default">
+        <div class="panel-body">My crystals are worth: </div>
+        <h1 id="randomNumber"></h1>
+        </div>
+
+    <div>
+        <button class="crystalOne crystal"></button>
+        <button class="crystalTwo crystal"></button>
+        <button class="crystalThree crystal"></button>
+        <button class="crystalFour crystal"></button>
+    </div>
+
+    <div class="panel panel-default">
+            <div class="panel-body">How much are your crystals worth?</div>
+            <h1 id="result"></h1>
+          </div>
+          
+
+    <script type="text/javascript">
+     $(document).ready(function() {
+
+        var crystalOne;
+        var crystalTwo;
+        var crystalThree;
+        var crystalFour;
+        var randomNumber;
+
+    function beginGame() {
+        crystalOne = Math.floor(Math.random() * 9) + 1; 
+    console.log(crystalOne);
+        crystalTwo = Math.floor(Math.random() * 9) + 1; 
+    console.log(crystalTwo);
+        crystalThree = Math.floor(Math.random() * 9) + 1; 
+    console.log(crystalThree);
+        crystalFour = Math.floor(Math.random() * 9) + 1; 
+    console.log(crystalFour);
+        randomNumber = Math.floor(Math.random() * 100) + 1; 
+    console.log(randomNumber);
+
+$("#result").empty();
+$("#randomNumber").text(randomNumber);
+      }
     
+
+    $(".crystalOne").on("click", function() {
+        crystalOne += $(this).val();
+          $("#result").text(crystalOne);
+        });
+    $(".crystalTwo").on("click", function() {
+        crystalTwo += $(this).val();
+          $("#result").text(crystalTwo);
+        });
+    $(".crystalThree").on("click", function() {
+        crystalThree += $(this).val();
+          $("#result").text(crystalThree);
+        });
+    $(".crystalFour").on("click", function() {
+        crystalFour += $(this).val();
+          $("#result").text(crystalFour);
+        });
+beginGame();  
+        });     
+        
+</script>       
 </body>
 </html>
