@@ -32,8 +32,20 @@
             <div class="panel-body">How much are your crystals worth?</div>
             <h1 id="result"></h1>
           </div>
-          
-
+          <div>
+                <div class="panel panel-default">
+                        <div class="panel-heading">Wins</div>
+                        <div class="panel-body">
+                          <h1 id="wins"></h1>
+                        </div>
+                      </div>
+                <div class="panel panel-default">
+                        <div class="panel-heading">Losses</div>
+                        <div class="panel-body">
+                        <h1 id="losses"></h1>
+                        </div>
+                        </div>
+        </div>
     <script type="text/javascript">
      $(document).ready(function() {
 
@@ -42,17 +54,22 @@
         var crystalThree;
         var crystalFour;
         var randomNumber;
+        var result = 0;
+        var wins = 0;
+        var losses = 0;
 
-    function beginGame() {
-        crystalOne = Math.floor(Math.random() * 9) + 1; 
+    function beginGame() 
+    {
+        
+        crystalOne = parseInt(Math.floor(Math.random() * 9) + 1);
     console.log(crystalOne);
-        crystalTwo = Math.floor(Math.random() * 9) + 1; 
+        crystalTwo = parseInt(Math.floor(Math.random() * 9) + 1); 
     console.log(crystalTwo);
-        crystalThree = Math.floor(Math.random() * 9) + 1; 
+        crystalThree = parseInt(Math.floor(Math.random() * 9) + 1); 
     console.log(crystalThree);
-        crystalFour = Math.floor(Math.random() * 9) + 1; 
+        crystalFour = parseInt(Math.floor(Math.random() * 9) + 1); 
     console.log(crystalFour);
-        randomNumber = Math.floor(Math.random() * 100) + 1; 
+        randomNumber = parseInt(Math.floor(Math.random() * 100) + 1); 
     console.log(randomNumber);
 
 $("#result").empty();
@@ -61,21 +78,45 @@ $("#randomNumber").text(randomNumber);
     
 
     $(".crystalOne").on("click", function() {
-        crystalOne += $(this).val();
-          $("#result").text(crystalOne);
+        result += crystalOne;
+        console.log("result:" + result)
+          $("#result").text(result);
+          checkWinner();
         });
     $(".crystalTwo").on("click", function() {
-        crystalTwo += $(this).val();
-          $("#result").text(crystalTwo);
+        result += crystalTwo;
+          $("#result").text(result);
+          checkWinner();
         });
     $(".crystalThree").on("click", function() {
-        crystalThree += $(this).val();
-          $("#result").text(crystalThree);
+        result += crystalThree;
+          $("#result").text(result);
+          checkWinner();
         });
     $(".crystalFour").on("click", function() {
-        crystalFour += $(this).val();
-          $("#result").text(crystalFour);
+        result += crystalFour;
+          $("#result").text(result);
+          checkWinner();
         });
+   
+      function checkWinner (){
+          console.log("checking winner");
+        if (result === randomNumber) {
+            wins ++
+            $("#wins").text(wins);
+            result = 0;
+            beginGame();
+            console.log("win")
+        }
+        else if (result > randomNumber) {
+            losses ++
+            console.log("loss")
+            $("#losses").text(losses);
+            result = 0;
+            beginGame();
+
+        }
+      }
 beginGame();  
         });     
         
