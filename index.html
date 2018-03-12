@@ -6,6 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>CrystalsCollector</title>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <link href="https://fonts.googleapis.com/css?family=Amatic+SC" rel="stylesheet">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
     <link rel="stylesheet" href="assets/css/style.css">
 </head>
@@ -14,10 +15,10 @@
         <div class="jumbotron jumbotron-fluid">
                 <div class="container">
                   <h1 class="display-3">Crystals Collector</h1>
-                  <p class="lead">Click on the crystals to add up points to exactly equal the number in the box!</p>
+                  <p class="lead">In order to win the game your number must exactly equal the number in the box. Each crystal has a specific number for every random number that is displayed. Good luck!</p>
                 </div>
               </div>
-
+              <main>
     <div class="container">
         <div class="row">
             <!-- <div class="col-md-1"></div> -->
@@ -62,7 +63,7 @@
             <div class="row">
                     <!-- <div class="col-md-1"></div> -->
                         <div class="col-md-4">
-                <div class="panel panel-default">
+                <div class="panel panel-default wins">
                         <div class="panel-heading">Wins</div>
                         <div class="panel-body">
                           <h1 id="wins"></h1>
@@ -71,7 +72,7 @@
                       </div>
 
                       <div class="col-md-4">
-                <div class="panel panel-default">
+                <div class="panel panel-default losses">
                         <div class="panel-heading">Losses</div>
                         <div class="panel-body">
                         <h1 id="losses"></h1>
@@ -88,7 +89,7 @@
         </div>
     </div>
     
-
+</main>
     
      
 <script type="text/javascript" src="assets/javascript/game.js"></script>       

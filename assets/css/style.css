@@ -1,3 +1,8 @@
+main {
+    background: url(../images/mountains2.jpg);
+    background-repeat: no-repeat;
+    /* opacity: 0.5; */
+}
 .crystalOne {
     background: url(../images/one.png);
     background-repeat: no-repeat;
@@ -5,7 +10,7 @@
     width: 100px;
     image-orientation: center;
     overflow: hidden;
-    border: 1px solid white;
+    border: none;
 }
 .crystalTwo {
     background: url(../images/two.png);
@@ -14,7 +19,7 @@
     width: 100px;
     image-orientation: center;
     overflow: hidden;
-    border: 1px solid white;
+    border: none;
 }
 .crystalThree {
     background: url(../images/three.png);
@@ -23,7 +28,7 @@
     width: 100px;
     image-orientation: center;
     overflow: hidden;
-    border: 1px solid white;
+    border: none;
 }
 .crystalFour {
     background: url(../images/four.png);
@@ -32,27 +37,40 @@
     width: 100px;
     image-orientation: center;
     overflow: hidden;
-    border: 1px solid white;
+    border: none;
 }
 .mine {
     margin-top: 30px;
+    border: 1px solid midnightblue;
 }
 .yours {
     margin-top: 30px;
+    border: 1px solid midnightblue;
 }
 .miner {
     background: url(../images/miner.png);
     height: 600px;
-    border: white solid 1px;
+    border: none;
     background-repeat: no-repeat;
+    margin-top: 20px;
 }
 .panel {
     text-align: center;
     font-weight: 900;
+    font-family: 'Amatic SC', cursive;
+    
 }
 .jumbotron {
-    background: url(../images/mtns.jpg);
+    background: url(../images/mountains.jpg);
     color: rgb(11, 11, 49);
     background-repeat: no-repeat;
-    border-bottom: midnightblue 3px solid;
+    border-bottom: midnightblue 10px solid;
+    font-family: 'Amatic SC', cursive;
+    margin-bottom: 0;
+}
+.wins {
+    border: 1px solid midnightblue;
+}
+.losses {
+    border: 1px solid midnightblue;
 }
